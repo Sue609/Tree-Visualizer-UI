@@ -22,10 +22,7 @@
         --radius: 14px;
       }
 
-      /* === Mobile usability fix === */
-      input, select, textarea, button {
-        font-size: 16px;
-      }
+      
 
       * { box-sizing: border-box; }
       html,body { height:100%; margin:0; font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111827; }
@@ -180,13 +177,6 @@
         stroke: rgba(0,0,0,0.06);
       }
       .node text { font-weight:700; fill:#fff; font-size:14px; pointer-events:none; }
-
-      /* Responsive tweaks */
-      @media (max-width:720px) {
-        .controls { flex-direction:column; align-items:stretch; }
-        .controls .small-btns { justify-content:flex-start; width:100%; }
-        .chips { justify-content:center; }
-      }
 
 
     canvas {
