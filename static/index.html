@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Binary Search Tree Visualizer</title>
 
     <!-- Google font for a nicer look -->
@@ -20,6 +21,36 @@
         --soft-shadow: 0 8px 28px rgba(16,24,40,0.06);
         --radius: 14px;
       }
+
+      input, select, textarea, button {
+        font-size: 16px !important; /* Prevents zoom on focus in mobile browsers */
+        touch-action: manipulation; /* Prevents double-tap zoom on buttons */
+      }
+      
+      body {
+        -webkit-text-size-adjust: 100%; /* Prevents font auto-scaling on iOS */
+      }
+      
+      @media (max-width: 720px) {
+        html, body {
+          overflow-x: hidden; /* Prevents sideways scrolling */
+        }
+      
+        .card {
+          padding: 16px;
+        }
+      
+        input.input {
+          width: 100%;
+          font-size: 16px; /* Ensures no zoom */
+        }
+      
+        .btn {
+          font-size: 16px;
+          padding: 12px 16px;
+        }
+      }
+
       * { box-sizing: border-box; }
       html,body { height:100%; margin:0; font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111827; }
 
@@ -33,7 +64,8 @@
 
       /* === Main wrapper card === */
       .app {
-        width: min(920px, 96vw);
+        width: min(920px, 95%);
+        margin: auto;
       }
 
       header.app-header {
