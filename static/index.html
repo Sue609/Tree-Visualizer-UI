@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Search Tree Visualizer</title>
 
     <!-- Google font for a nicer look -->
@@ -9,6 +10,45 @@
 
     <style>
       /* === Reset & base === */
+
+      /* --- Fix the input section stretching --- */
+.card {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--soft-shadow);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+/* Fix for the wide input field */
+.wide {
+  flex: 1 1 auto; /* let it shrink on small screens */
+  min-width: 200px; /* prevent it from collapsing too much */
+}
+
+/* Keep the input tidy */
+input.input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+}
+
+/* Prevent any flex child from stretching vertically */
+.controls > * {
+  align-self: flex-start;
+}
+
       :root{
         --bg-start: #caa0ff;
         --bg-end: #ffd1e0;
@@ -173,14 +213,6 @@
       }
       .node text { font-weight:700; fill:#fff; font-size:14px; pointer-events:none; }
 
-      /* Responsive tweaks */
-      @media (max-width:720px) {
-        .controls { flex-direction:column; align-items:stretch; }
-        .controls .small-btns { justify-content:flex-start; width:100%; }
-        .chips { justify-content:center; }
-      }
-
-
     canvas {
         display: block;
     }
@@ -259,7 +291,9 @@
           </div>
         </div>
 
-        
+         <div id="tree-container">
+    <canvas id="treeCanvas"></canvas>
+  </div>
 
         <div style="height:12px"></div>
 
